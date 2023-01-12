@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone the code'){
+            steps{
+                echo "cloning the code from git hub"
+            }
+        }
+        stage('building the code'){
+            steps{
+                echo"building the code by maven"
+            }
+        }
+        stage('testing the code'){
+            steps{
+                echo"testing the code from production"
+            }
+        }
+        stage('deploy the code'){
+            steps{
+                echo"deploying the code from prod"
+            }
+        }
+        stage('release to server'){
+            steps{
+                echo"release to server on production"
+            }
+        }
+        stage ('notifi to team'){
+            steps{
+                echo"notification to devops team"
+            }
+        }
+    }
+}
