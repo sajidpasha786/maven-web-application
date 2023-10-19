@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage ('cloning the code') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sajidpasha786/maven-web-application.git']])
+            }
+        }
+        
+        stage ('building the code') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
